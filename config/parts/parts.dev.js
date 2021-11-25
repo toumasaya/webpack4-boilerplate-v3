@@ -7,7 +7,7 @@ exports.devServer = ({ host, port } = {}) => ({
     stats: 'errors-only',
     host, // Defaults to `localhost`
     port, // Defaults to 8080
-    open: true,
+    // open: true,
     overlay: true,
     hot: true,
     compress: true,
