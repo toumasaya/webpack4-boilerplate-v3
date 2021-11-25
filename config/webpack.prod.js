@@ -1,6 +1,7 @@
 const { merge } = require('webpack-merge')
 
 const paths = require('./paths')
+const parts = require('./parts/parts.optimizing')
 
 const prodConfig = merge([
   {
@@ -36,6 +37,7 @@ const prodConfig = merge([
       maxAssetSize: 512000,
     },
   },
+  parts.minifyJavaScript(),
 ])
 
 module.exports = prodConfig

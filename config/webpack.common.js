@@ -12,9 +12,7 @@ const commonConfig = merge([
     mode: 'none',
     entry: {
       main: paths.src + '/index.js',
-      // sub: paths.src + '/js/sub.js',
       normal: paths.src + '/js/normal.js',
-      // lib: paths.src + '/js/lib.js',
     },
     resolve: {
       modules: [paths.src, 'node_modules'],
@@ -36,18 +34,6 @@ const commonConfig = merge([
           noErrorOnMissing: true,
         },
       ]),
-      // new HtmlWebpackPlugin({
-      //   template: paths.src + '/views/index.html',
-      //   filename: 'index.html',
-      //   chunks: ['main'],
-      //   minify: false,
-      // }),
-      // new HtmlWebpackPlugin({
-      //   template: paths.src + '/views/about.html',
-      //   filename: 'about.html',
-      //   chunks: ['normal'],
-      //   minify: false,
-      // }),
     ],
   },
   parts.loadPug({
@@ -70,9 +56,7 @@ glob.sync(paths.src + '/views/*.pug').forEach((path) => {
     new HtmlWebpackPlugin({
       template: paths.src + '/views/' + name + '.pug',
       filename: name + '.html',
-      // chunks: ['main'],
       chunks: chunkConfig,
-      // minify: false,
       minify: {
         removeScriptTypeAttributes: true,
       },
