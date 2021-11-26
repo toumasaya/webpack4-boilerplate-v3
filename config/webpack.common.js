@@ -16,23 +16,24 @@ const commonConfig = merge([
     },
     plugins: [
       new CleanWebpackPlugin(),
-      new CopyWebpackPlugin([
-        {
-          from: paths.public,
-          to: 'assets',
-          globOptions: {
-            ignore: ['*.DS_Store'],
+      new CopyWebpackPlugin({
+        patterns: [
+          {
+            from: paths.public,
+            to: 'assets',
+            globOptions: {
+              ignore: ['*.DS_Store'],
+            },
+            noErrorOnMissing: true,
           },
-          noErrorOnMissing: true,
-        },
-      ]),
+        ],
+      }),
     ],
     resolve: {
       modules: [paths.src, 'node_modules'],
       extensions: ['.js', '.jsx', '.json'],
       alias: {
         '@': paths.src,
-        assets: paths.public,
       },
     },
   },
