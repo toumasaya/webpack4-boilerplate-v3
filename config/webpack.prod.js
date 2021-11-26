@@ -56,6 +56,14 @@ const prodConfig = merge([
       nodir: true,
     }),
   }),
+  partsAssets.loadImages({
+    options: {
+      limit: 10000,
+      // limit: false,
+      name: 'images/[path][name].[hash:5].[ext]',
+      context: paths.src + '/images',
+    },
+  }),
 ])
 
 module.exports = prodConfig

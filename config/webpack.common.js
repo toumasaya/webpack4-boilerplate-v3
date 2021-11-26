@@ -14,14 +14,6 @@ const commonConfig = merge([
       main: paths.src + '/index.js',
       normal: paths.src + '/js/normal.js',
     },
-    resolve: {
-      modules: [paths.src, 'node_modules'],
-      extensions: ['.js', '.jsx', '.json'],
-      alias: {
-        '@': paths.src,
-        assets: paths.public,
-      },
-    },
     plugins: [
       new CleanWebpackPlugin(),
       new CopyWebpackPlugin([
@@ -35,6 +27,14 @@ const commonConfig = merge([
         },
       ]),
     ],
+    resolve: {
+      modules: [paths.src, 'node_modules'],
+      extensions: ['.js', '.jsx', '.json'],
+      alias: {
+        '@': paths.src,
+        assets: paths.public,
+      },
+    },
   },
   parts.loadPug({
     options: {
