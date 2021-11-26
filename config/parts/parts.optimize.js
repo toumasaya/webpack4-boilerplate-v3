@@ -1,3 +1,6 @@
+/**
+ * === JavaScript
+ */
 const TerserPlugin = require('terser-webpack-plugin')
 
 exports.minifyJavaScript = () => ({
@@ -17,4 +20,17 @@ exports.minifyJavaScript = () => ({
       }),
     ],
   },
+})
+
+/**
+ * === Css
+ */
+const PurgecssPlugin = require('purgecss-webpack-plugin')
+
+exports.purifyCSS = ({ paths }) => ({
+  plugins: [
+    new PurgecssPlugin({
+      paths,
+    }),
+  ],
 })

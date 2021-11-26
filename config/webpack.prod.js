@@ -1,4 +1,5 @@
 const { merge } = require('webpack-merge')
+const globAll = require('glob-all')
 
 const paths = require('./paths')
 const partsAssets = require('./parts/parts.assets')
@@ -41,6 +42,11 @@ const prodConfig = merge([
   partsOptimize.minifyJavaScript(),
   partsAssets.extractCSS({
     use: ['css-loader', 'postcss-loader', 'sass-loader'],
+  }),
+  partsOptimize.purifyCSS({
+    paths: globAll.sync([paths.src + '/**/*'], {
+      nodir: true,
+    }),
   }),
 ])
 
