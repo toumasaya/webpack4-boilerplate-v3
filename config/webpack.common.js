@@ -5,7 +5,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const glob = require('glob')
 
 const paths = require('./paths')
-const parts = require('./parts/parts.views')
+const parts = require('./parts/parts.assets')
 
 const commonConfig = merge([
   {
