@@ -40,6 +40,14 @@ const prodConfig = merge([
     },
   },
   partsOptimize.minifyJavaScript(),
+  partsOptimize.minifyCSS({
+    options: {
+      discardComments: {
+        removeAll: true,
+      },
+      safe: true,
+    },
+  }),
   partsAssets.extractCSS({
     use: ['css-loader', 'postcss-loader', 'sass-loader'],
   }),
