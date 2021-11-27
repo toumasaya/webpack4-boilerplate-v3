@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[1,2],{"1SnQ":function(t,n,o){"use strict";o.r(n),n.default=function(){fetch("https://jsonplaceholder.typicode.com/todos/1").then(t=>t.json()).then(t=>{})}},"3ERx":function(t,n,o){},tjUo:function(t,n,o){"use strict";o.r(n);var c=o("1SnQ");o("3ERx");Object(c.default)()}},[["tjUo",0]]]);

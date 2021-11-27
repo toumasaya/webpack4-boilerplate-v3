@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[2],{"1SnQ":function(n,o,t){"use strict";t.r(o),o.default=function(){fetch("https://jsonplaceholder.typicode.com/todos/1").then(n=>n.json()).then(n=>{})}}},[["1SnQ",0]]]);
