@@ -65,6 +65,12 @@ const prodConfig = merge([
       context: paths.src + '/images',
     },
   }),
+  partsAnalyze.bundleAnalyzer({
+    analyzerMode: 'server',
+    analyzerPort: 8888,
+    openAnalyzer: true,
+  }),
+  partsAnalyze.sizePlugin(),
   partsAnalyze.attachRevision(),
 ])
 

@@ -43,12 +43,6 @@ const commonConfig = merge([
       pretty: true,
     },
   }),
-  partsAnalyze.bundleAnalyzer({
-    analyzerMode: 'server',
-    analyzerPort: 8888,
-    openAnalyzer: true,
-  }),
-  partsAnalyze.sizePlugin(),
 ])
 
 // Generates an HTML file from a template
