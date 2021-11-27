@@ -1,14 +1,2 @@
-/*! purgecss start ignore */
-::placeholder {
-  color: pink;
-}
-/*! purgecss end ignore */
-
-h1 {
-  color: blue;
-  filter: grayscale(50%);
-}
-
-p {
-  color: #aaa;
-}
+@charset "utf-8";
+@import '~bulma/bulma';
