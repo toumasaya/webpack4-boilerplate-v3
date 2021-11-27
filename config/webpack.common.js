@@ -5,7 +5,8 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const glob = require('glob')
 
 const paths = require('./paths')
-const parts = require('./parts/parts.assets')
+const partsAssets = require('./parts/parts.assets')
+const partsAnalyze = require('./parts/parts.analyze')
 
 const commonConfig = merge([
   {
@@ -37,10 +38,15 @@ const commonConfig = merge([
       },
     },
   },
-  parts.loadPug({
+  partsAssets.loadPug({
     options: {
       pretty: true,
     },
+  }),
+  partsAnalyze.bundleAnalyzer({
+    analyzerMode: 'server',
+    analyzerPort: 8888,
+    openAnalyzer: true,
   }),
 ])
 
