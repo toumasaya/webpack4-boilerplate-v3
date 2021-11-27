@@ -4,6 +4,7 @@ const globAll = require('glob-all')
 const paths = require('./paths')
 const partsAssets = require('./parts/parts.assets')
 const partsOptimize = require('./parts/parts.optimize')
+const partsAnalyze = require('./parts/parts.analyze')
 
 const prodConfig = merge([
   {
@@ -64,6 +65,7 @@ const prodConfig = merge([
       context: paths.src + '/images',
     },
   }),
+  partsAnalyze.attachRevision(),
 ])
 
 module.exports = prodConfig
