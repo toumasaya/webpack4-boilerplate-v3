@@ -6,14 +6,12 @@ const glob = require('glob')
 
 const paths = require('./paths')
 const partsAssets = require('./parts/parts.assets')
-const partsAnalyze = require('./parts/parts.analyze')
 
 const commonConfig = merge([
   {
     mode: 'none',
     entry: {
       main: paths.src + '/index.js',
-      normal: paths.src + '/js/normal.js',
     },
     plugins: [
       new CleanWebpackPlugin(),
@@ -43,12 +41,6 @@ const commonConfig = merge([
       pretty: true,
     },
   }),
-  partsAnalyze.bundleAnalyzer({
-    analyzerMode: 'server',
-    analyzerPort: 8888,
-    openAnalyzer: true,
-  }),
-  partsAnalyze.sizePlugin(),
 ])
 
 // Generates an HTML file from a template
@@ -58,13 +50,12 @@ glob.sync(paths.src + '/views/*.pug').forEach((path) => {
   const start = path.indexOf('/views/') + 7
   const end = path.length - 4
   const name = path.slice(start, end)
-  const chunkConfig = name === 'about' ? ['normal'] : ['main']
 
   commonConfig.plugins.push(
     new HtmlWebpackPlugin({
       template: paths.src + '/views/' + name + '.pug',
       filename: name + '.html',
-      chunks: chunkConfig,
+      chunks: ['main'],
       minify: {
         removeScriptTypeAttributes: true,
       },

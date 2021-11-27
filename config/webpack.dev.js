@@ -12,7 +12,6 @@ const devConfig = merge([
     devtool: 'inline-source-map',
     plugins: [new webpack.HotModuleReplacementPlugin(), new ErrorOverlayPlugin()],
   },
-  // merge other parts
   partsDev.devServer({
     host: process.env.HOST,
     port: 9527,
