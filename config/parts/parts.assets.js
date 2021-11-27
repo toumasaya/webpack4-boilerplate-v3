@@ -69,7 +69,6 @@ exports.loadCSS = ({ include, exclude } = {}) => ({
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 exports.extractCSS = ({ include, exclude, use = [] }) => {
-  // Output extracted CSS to a file
   const plugin = new MiniCssExtractPlugin({
     filename: 'css/[name].[contenthash:5].css',
   })
@@ -132,19 +131,3 @@ exports.loadImages = ({ include, exclude, options } = {}) => ({
     ],
   },
 })
-
-/**
- * === JavaScript
- */
-// exports.loadJavaScript = ({ include, exclude } = {}) => ({
-//   module: {
-//     rules: [
-//       {
-//         test: /\.js$/,
-//         include,
-//         exclude,
-//         // use: 'babel-loader?cacheDirectory',
-//       },
-//     ],
-//   },
-// })

@@ -12,7 +12,6 @@ const prodConfig = merge([
     devtool: false,
     output: {
       path: paths.build,
-      // publicPath: '/',
       filename: 'js/[name].[contenthash:5].js',
       chunkFilename: 'js/[name].[contenthash:5].js',
     },
@@ -35,7 +34,7 @@ const prodConfig = merge([
       },
     },
     performance: {
-      hints: 'warning', // or false
+      hints: 'warning',
       maxEntrypointSize: 512000,
       maxAssetSize: 512000,
     },
@@ -60,7 +59,6 @@ const prodConfig = merge([
   partsAssets.loadImages({
     options: {
       limit: 10000,
-      // limit: false,
       name: 'images/[path][name].[hash:5].[ext]',
       context: paths.src + '/images',
     },
