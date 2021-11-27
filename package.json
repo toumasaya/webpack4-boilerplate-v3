@@ -7,7 +7,7 @@
     "dev": "webpack-dev-server --env development",
     "build": "webpack --env production --profile --progress",
     "lint": "eslint . src config || true",
-    "deploy": "gh-pages -d public"
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [],
   "author": "",
