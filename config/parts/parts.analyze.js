@@ -8,3 +8,9 @@ exports.bundleAnalyzer = ({ options }) => ({
     }),
   ],
 })
+
+const SizePlugin = require('size-plugin')
+
+exports.sizePlugin = () => ({
+  plugins: [new SizePlugin()],
+})

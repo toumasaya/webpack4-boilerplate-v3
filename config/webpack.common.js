@@ -48,6 +48,7 @@ const commonConfig = merge([
     analyzerPort: 8888,
     openAnalyzer: true,
   }),
+  partsAnalyze.sizePlugin(),
 ])
 
 // Generates an HTML file from a template
